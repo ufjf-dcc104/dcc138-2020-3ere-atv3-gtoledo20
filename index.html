@@ -9,13 +9,21 @@
 <body>
    <h1>Exemplo 02</h1>
     <canvas></canvas>
-    <img src = "assets/zombie01.png"/>
     <script>
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
+        const zombie = new Image();
+        zombie.src = "assets/zombie01.png";
 
-        ctx.fillStyle = "green";
+        zombie.addEventListener("load", terminouDeCarregar);
+
+        ctx.fillStyle = "darkorange";
         ctx.fillRect(0,0, canvas.width, canvas.height);
+
+        function terminouDeCarregar() {
+           ctx.drawImage(zombie, 0, 0); 
+        }
+        
     </script>
 </body>
 </html>
