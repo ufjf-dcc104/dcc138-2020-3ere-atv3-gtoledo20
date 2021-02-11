@@ -13,15 +13,17 @@
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
         const zombie = new Image();
-        zombie.src = "assets/zombie01.png";
+        zombie.src = "assets/zombie.png";
 
         zombie.addEventListener("load", terminouDeCarregar);
 
         ctx.fillStyle = "darkorange";
         ctx.fillRect(0,0, canvas.width, canvas.height);
+        let l = 2;
+        let c = 1;
 
         function terminouDeCarregar() {
-           ctx.drawImage(zombie, 0, 0); 
+           ctx.drawImage(zombie, c*64, l*64, 64, 64, 0, 0, 64, 64); 
         }
         
     </script>
